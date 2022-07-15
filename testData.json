@@ -1,0 +1,78 @@
+[
+  {
+    "name": "Taco Salad",
+    "category": "salads",
+    "cookingTime": 35,
+    "servings": 6,
+    "ingredients": [
+      "Sour cream",
+      "Taco seasoning",
+      "Lime juice",
+      "Salsa",
+      "Fresh jalapeño",
+      "Cilantro",
+      "Black beans",
+      "Canned corn",
+      "Avocado",
+      "Cheese",
+      "Tortilla chips"
+    ]
+  },
+
+  {
+    "name": "Green salad with avocado",
+    "category": "salads",
+    "cookingTime": 10,
+    "servings": 10,
+    "ingredients": [
+      "1 tbsp lemon juice",
+      "A pinch of salt",
+      "4 tbsp olive oil",
+      "Small bunch finely chopped chives",
+      "200g bag mixed salad leaves",
+      "2 sliced, ripe avocados"
+    ]
+  },
+
+  {
+    "name": "Homemade Mayonnaise",
+    "category": "sauces",
+    "cookingTime": 5,
+    "servings": 4,
+    "ingredients": ["Large egg", "Garlic clove", "Dijon mustard", " Sea salt", "Lemon", "Light oil"]
+  },
+
+  {
+    "name": "Fruit Salad",
+    "category": "salads",
+    "cookingTime": 15,
+    "servings": 10,
+    "ingredients": [
+      "Cantaloupe",
+      "Pineapple",
+      "Strawberries",
+      "Blueberries",
+      "Kiwis",
+      "Brown sugar",
+      "Mint",
+      "Orange",
+      "Vanilla"
+    ]
+  },
+
+  {
+    "name": "Mediterranean Wedge Salad",
+    "category": "salads",
+    "cookingTime": 15,
+    "servings": 10,
+    "ingredients": [
+      "Cherry tomatoes",
+      "Pitted greek olives",
+      "Feta",
+      "Cucumbers",
+      "Pickled red onions",
+      "Iceberg lettuce",
+      "Feta dressing"
+    ]
+  }
+]

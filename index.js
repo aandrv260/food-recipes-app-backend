@@ -1,8 +1,13 @@
 const express = require('express');
+const dotenv = require('dotenv');
 const recipeRouter = require('./routes/recipesRoutes');
 
 const app = express();
-const PORT = 8000;
+
+// Configure the environment variables
+dotenv.config({ path: './config.env' });
+
+const PORT = process.env.PORT || 4000;
 
 // Parse request body
 app.use(express.json());
