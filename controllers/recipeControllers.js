@@ -1,0 +1,1 @@
+exports.getAllRecipes = (req, res) => {};
