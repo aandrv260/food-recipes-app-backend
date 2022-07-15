@@ -4,7 +4,6 @@ const fs = require('fs');
 const recipes = JSON.parse(fs.readFileSync(`${__dirname}/../testData.json`, 'utf-8'));
 
 exports.getAllRecipes = async (req, res) => {
-  console.log(recipes);
   res.status(200).json({
     status: 200,
     requestedAt: req.requestTime,
