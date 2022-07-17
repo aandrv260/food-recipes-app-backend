@@ -25,4 +25,23 @@ exports.getAllRecipes = async (req, res) => {
   }
 };
 
+exports.createRecipe = async (req, res) => {
+  try {
+    const { body } = req;
+    const newRecipe = await Recipe.create(body);
+
+    res.status(201).json({
+      status: 'success',
+      data: {
+        recipe: newRecipe,
+      },
+    });
+  } catch (err) {
+    res.status(400).json({
+      status: 'fail',
+      message: err,
+    });
+  }
+};
+
 exports.getRecipe = (req, res) => {};
