@@ -1,4 +1,5 @@
 const express = require('express');
+const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const recipeRouter = require('./routes/recipesRoutes');
 
@@ -6,6 +7,21 @@ const app = express();
 
 // Configure the environment variables
 dotenv.config({ path: './config.env' });
+
+// Connect to MongoDB
+const DB_PASSWORD = process.env.DATABASE_PASSWORD;
+const DB = process.env.DATABASE.replace('<PASSWORD>', DB_PASSWORD);
+
+mongoose
+  .connect(DB, {
+    // Options that deal with deprecation warnings
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+  })
+  .then(() => {
+    console.log('MongoDB connection successful');
+  });
 
 // Allow Access Origin and Methods
 app.use((req, res, next) => {
