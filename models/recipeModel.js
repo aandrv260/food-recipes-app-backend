@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const recipeSchema = new mongoose.Schema({
   name: {
     type: String,
+    trim: true,
     // [1] el is the error we want to display if this field is missing
     required: [true, 'A recipe must have a name'],
     unique: true,
@@ -10,6 +11,7 @@ const recipeSchema = new mongoose.Schema({
 
   category: {
     type: String,
+    trim: true,
     required: [true, 'A recipe must have category'],
   },
 
