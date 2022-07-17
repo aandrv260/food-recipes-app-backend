@@ -1,13 +1,20 @@
 const fs = require('fs');
 const Recipe = require('../models/recipeModel');
+const APIFeatures = require('../assets/apiFeatures');
+const { removeSpecialFieldsFromQuery } = require('../assets/helperFunctions');
 
-// Fetch alkl
+// Fetch recipes
 const recipes = JSON.parse(fs.readFileSync(`${__dirname}/../testData.json`, 'utf-8'));
 
 exports.getAllRecipes = async (req, res) => {
   try {
-    // Get all recipes from the database
-    const recipes = await Recipe.find();
+    const features = new APIFeatures(Recipe.find(), req.query)
+      .filter()
+      .sort()
+      .limitFields()
+      .paginate();
+
+    const recipes = await features.query;
 
     res.status(200).json({
       status: 200,
@@ -18,6 +25,7 @@ exports.getAllRecipes = async (req, res) => {
       },
     });
   } catch (err) {
+    console.log(err);
     res.status(404).json({
       status: 'fail',
       message: err,
